@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Zafeino</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="zafeino.png" alt="Loading" class="loading-image">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="sh-bar">
+        <div class="sh-container" style="position: relative;">
+            <i class="sh-bar__share icon icon-event-share" data-test="share-external-button" id="share-fab-button"></i>
+        </div>
+    </div>
+
+    <div class="sh-background" ng-style="getBackgroundStyles()" style="height: 500px; background-color: rgb(247, 7, 36); color: rgb(255, 255, 255);"></div>
+
+    <!-- Images Container -->
+    <div class="image-container">
+        <div class="sh-image" onclick="openLightbox(this)">
+            <img class="sh-image__image" src="1.jpg" alt="Image 1">
+        </div>
+        <div class="sh-image" onclick="openLightbox(this)">
+            <img class="sh-image__image" src="4.jpg" alt="Image 4">
+        </div>
+        <div class="sh-image" onclick="openLightbox(this)">
+            <img class="sh-image__image" src="2.jpg" alt="Image 2">
+        </div>
+        <div class="sh-image" onclick="openLightbox(this)">
+            <img class="sh-image__image" src="3.jpg" alt="Image 3">
+        </div>
+        <button class="share-button" onclick="toggleShareMenu()"></button>
+        <div class="share-menu" id="share-menu">
+            <a href="https://web.facebook.com/share_channel/" target="_blank" class="share-menu-item">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://x.com/intent/post?url=https%3A%2F%2Fqrco.de%2Fbf9XOr%3FtrackSharing%3D1" target="_blank" class="share-menu-item">
+                <i class="fab fa-x-twitter"></i> X
+            </a>
+            <a href="mailto:?subject=Check this out&body=YOUR_URL" class="share-menu-item">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <div class="share-menu-item" onclick="copyLink()">
+                <i class="fas fa-link"></i> Copy Link
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <button class="lightbox-nav lightbox-nav-left" onclick="prevImage()">&lt;</button>
+        <button class="lightbox-nav lightbox-nav-right" onclick="nextImage()">&gt;</button>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js?v=1.0"></script>
+</body>
+</html>
